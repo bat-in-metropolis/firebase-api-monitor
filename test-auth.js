@@ -1,12 +1,9 @@
-// test-auth.js
-// Purpose: Just verify that your service account credentials work
-// and you can successfully call a Google API endpoint.
-
 const { GoogleAuth } = require('google-auth-library');
+require('dotenv').config();
 const path = require('path');
 
 const KEY_FILE = path.join(__dirname, 'service-account.json');
-const PROJECT_ID = 'pref-test-30121'; // 🔁 Replace this
+const PROJECT_ID = process.env.PROJECT_ID;
 
 async function testAuth() {
   console.log('🔐 Step 1: Loading service account credentials...');
